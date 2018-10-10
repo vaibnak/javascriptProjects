@@ -19,8 +19,27 @@ displayedImage.setAttribute('src',e.target.src );
 console.log(e.target.src);
 }
 
-thumbBar.addEventListener('click', changeImage);
+function changeOverlay(e){
+if(btn.getAttribute('class') === 'dark'){
+btn.setAttribute('class', 'lighten');
+btn.textContent = "lighten";
+overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+}else{
 
+btn.setAttribute('class', 'dark');
+btn.textContent = "darken";
+overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+
+
+}
+
+
+
+
+}
+
+thumbBar.addEventListener('click', changeImage);
+btn.addEventListener('click', changeOverlay);
 
 /* Wiring up the Darken/Lighten button */
 
